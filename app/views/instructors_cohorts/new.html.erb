@@ -1,0 +1,18 @@
+<h1>
+  Create Instructors ID and Cohort ID
+</h1>
+
+<%= form_for @instructorcohort do |f| %>
+<div>
+  <%= f.label :instructor_id%>
+  <%= f.text_field :instructor_id %>
+</div>
+<div>
+  <%= f.label :cohort_id %>
+  <%= f.text_field :cohort_id %>
+</div>
+
+<div>
+  <%=f.submit%>
+</div>
+<%end%>

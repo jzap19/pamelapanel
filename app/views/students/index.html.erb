@@ -1,0 +1,32 @@
+<h1>
+  <a href="<%= new_student_path %>">
+    Active Students
+  </a>
+</h1>
+
+<a href="<%= dashboard_path %>">dashboard</a>
+
+<% @students.each do |student| %>
+
+  <div>
+    First Name:
+    <%= student.first_name %>
+  </div>
+  <div>
+    Last Name:
+    <%= student.last_name %>
+  </div>
+  <div>
+    DOB:
+    <%= student.date_of_birth %>
+  </div>
+    <div>
+      highest Education:
+      <%= student.highest_ed %>
+    </div>
+    <div>
+      <a href="<%=student_path(student)%>" data-disable-with="processing...">Views</a>
+      <a href="<%=edit_student_path(student)%>">Edit</a>
+      <a href="<%=student_path(student)%>" data-method="DELETE">Delete</a>
+    </div>
+  <%end%>

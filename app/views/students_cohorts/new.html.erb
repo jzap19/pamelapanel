@@ -1,0 +1,18 @@
+<h1>
+  Create Students ID and Cohort ID
+</h1>
+
+<%= form_for @studentcohort do |f| %>
+<div>
+  <%= f.label :student_id%>
+  <%= f.text_field :student_id %>
+</div>
+<div>
+  <%= f.label :cohort_id %>
+  <%= f.text_field :cohort_id %>
+</div>
+
+<div>
+  <%=f.submit%>
+</div>
+<%end%>

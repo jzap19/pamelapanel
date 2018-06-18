@@ -1,0 +1,2 @@
+module InstructorsCohortsHelper
+end

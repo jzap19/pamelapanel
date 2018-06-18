@@ -1,0 +1,23 @@
+<h1>
+  <a href="<%= new_instructors_cohort_path %>">
+    Instructors Active in Cohorts
+  </a>
+</h1>
+
+<% @instructorscohorts.each do |instructorcohort| %>
+
+  <div>
+    Instructor ID:
+    <%= instructorcohort.instructor_id %>
+  </div>
+  <div>
+    Cohort ID:
+    <%= instructorcohort.cohort_id %>
+  </div>
+
+  <div>
+    <a href="<%=instructors_cohort_path(instructorcohort)%>" data-disable-with="processing...">Views</a>
+    <a href="<%=edit_instructors_cohort_path(instructorcohort)%>">Edit</a>
+    <a href="<%=instructors_cohort_path(instructorcohort)%>" data-method="DELETE">Delete</a>
+  </div>
+<%end%>

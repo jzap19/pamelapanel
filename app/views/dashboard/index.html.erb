@@ -1,0 +1,130 @@
+<h2>Welcome
+  <%= @admin.email %>, This is your dashboard</h2>
+<nav class="navbar">
+  <a href="<%=students_path%>">Students</a>
+  <a href="<%=instructors_path%>">Instructors</a>
+  <a href="<%=courses_path%>">Courses</a>
+  <a href="<%=cohorts_path%>">Cohorts</a>
+  <%= link_to 'Logout', destroy_admin_session_path, method: 'DELETE', class: 'btn btn-primary' %>
+</nav>
+
+<%= image_tag('ideas.png', :width => 250) %>
+
+<h2>
+  Cohorts
+</h2>
+<div class="container">
+  <table class="table table-hover table-responsive-sm-md-lg-xl">
+    <thead class="thead-danger">
+      <tr>
+        <th scope="col">Cohorts</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Total # of Students</th>
+        <th scope="col">Instructor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cohorts.each do |cohort| %>
+        <tr>
+          <td>
+            <%= cohort.cohort_name %>
+          </td>
+          <td>
+            <%= cohort.start_date %>
+          </td>
+          <td>
+            <%= cohort.end_date %>
+          </td>
+          <td>
+            <%= cohort.students_in_cohort %>
+          </td>
+          <td>
+            <%= cohort.instructor_teaching %>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+  <h2>
+    Students
+  </h2>
+  <div class="container">
+    <table class="table table-hover table-responsive-sm-md-lg-xl">
+      <thead class="thead-danger">
+        <tr>
+          <th scope="col">Students</th>
+          <th scope="col">DOB</th>
+          <th scope="col">Highest Education</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each do |student| %>
+          <tr>
+            <td>
+              <%= student.first_name %>
+              <%= student.last_name %>
+            </td>
+            <td>
+              <%= student.date_of_birth %>
+            </td>
+            <td>
+              <%= student.highest_ed %>
+            </td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+    <h2>
+      Instructors
+    </h2>
+    <div class="container">
+      <table class="table table-hover table-responsive-sm-md-lg-xl">
+        <thead class="thead-danger">
+          <tr>
+            <th scope="col">Instructors</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Highst Education</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @instructors.each do |instructor| %>
+            <tr>
+              <td>
+                <%= instructor.first_name %>
+                <%= instructor.last_name %>
+              </td>
+              <td>
+                <%= instructor.date_of_birth %>
+              </td>
+              <td>
+                <%= instructor.highest_edu %>
+              </td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+      <h2>
+        Courses
+      </h2>
+      <div class="container">
+        <table class="table table-hover table-responsive-sm-md-lg-xl">
+          <thead class="thead-danger">
+            <tr>
+              <th scope="col">Course</th>
+              <th scope="col">Total Class Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @courses.each do |course| %>
+              <tr>
+                <td>
+                  <%= course.subject %>
+                </td>
+                <td>
+                  <%= course.total_class_hours%>
+                </td>
+              </tr>
+            <%end%>
+          </tbody>
+        </table>
