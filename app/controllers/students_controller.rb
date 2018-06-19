@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  # skip_before_action :verify_authenticity_token, only: [:destroy]
   def index
     @students = Student.all
 end
@@ -28,7 +29,10 @@ end
 
   def destroy
     Student.destroy(params[:id])
+
+
     redirect_to students_path
+    # render json: {status: 'boom success', message: 'todo was successfully deleted'}
   end
 
   private

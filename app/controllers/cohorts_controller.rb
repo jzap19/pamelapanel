@@ -9,6 +9,7 @@ end
 
   def new
     @cohort = Cohort.new
+    @courses = Course.all
   end
 
   def create
@@ -36,6 +37,6 @@ end
   def cohort_params
     # will return something that looks like this:
     # {name: '...' description: '...' diameter: '...' price: '...' avaliable_until: '...'}
-    params.require(:cohort).permit(:cohort_name, :start_date, :end_date, :instructor_teaching, :students_in_cohort)
+    params.require(:cohort).permit(:cohort_name, :start_date, :end_date, :instructor_teaching, :students_in_cohort, :course_id)
     end
 end

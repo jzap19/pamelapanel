@@ -20,6 +20,10 @@
   <%= f.text_field :students_in_cohort %>
 </div>
 <div>
+  <%= f.label :course_id %>
+  <%= f.select :course_id, options_for_select(@courses.collect{|c| [c.subject, c.id]}, {include_blank: 'Select Course'}) %>
+</div>
+<div>
   <%= f.submit %>
 </div>
 <% end %>

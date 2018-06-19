@@ -4,6 +4,8 @@
   </a>
 </h1>
 
+<a href="<%= dashboard_path %>">dashboard</a>
+
 <% @cohorts.each do |cohort| %>
 
   <div>
@@ -25,6 +27,10 @@
   <div>
     Total # of Students:
     <%= cohort.students_in_cohort %>
+  </div>
+  <div>
+    Course Name:
+    <%= cohort.course_id %>
   </div>
   <div>
     <a href="<%=cohort_path(cohort)%>" data-disable-with="processing...">Views</a>
